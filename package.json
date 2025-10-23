@@ -1,0 +1,13 @@
+{
+  "name": "fullstack-Talynk",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start:frontend": "npm --prefix Talynk_front run dev",
+    "start:backend": "npm --prefix baalynk_backend run dev",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
