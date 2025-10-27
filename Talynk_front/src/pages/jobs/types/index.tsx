@@ -19,6 +19,8 @@ export interface Job {
   posted_date: string;
   is_active?: boolean;
   created_at?: string;
+  //match_score?: number;
+  //match_reasons?: string[];
 }
 
 export interface JobWithMatch extends Job {

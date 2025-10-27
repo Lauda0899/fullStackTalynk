@@ -5,7 +5,7 @@ import type { JobWithMatch } from '../types';
 interface TopMatchesProps {
   jobs: JobWithMatch[];
   onBookmark: (jobId: string) => void;
-  onView: (jobId: string) => void;
+  onView: (job:JobWithMatch) => void;
   onApply: (jobId: string, applyUrl: string) => void;
 }
 
@@ -29,7 +29,7 @@ export function TopMatches({ jobs, onBookmark, onView, onApply }: TopMatchesProp
             key={job.id}
             job={job}
             onBookmark={onBookmark}
-            onView={onView}
+            onView={()=>onView(job)}
             onApply={onApply}
           />
         ))}

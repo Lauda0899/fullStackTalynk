@@ -4,7 +4,7 @@ import type { JobWithMatch } from '../types';
 interface JobCardProps {
   job: JobWithMatch;
   onBookmark: (jobId: string) => void;
-  onView: (jobId: string) => void;
+  onView: (job:JobWithMatch) => void;
   onApply: (jobId: string, applyUrl: string) => void;
 }
 
@@ -39,7 +39,7 @@ export function JobCard({ job, onBookmark, onView, onApply }: JobCardProps) {
   };
 
   const handleCardClick = () => {
-    onView(job.id);
+    onView(job);
   };
 
   const handleApplyClick = (e: React.MouseEvent) => {

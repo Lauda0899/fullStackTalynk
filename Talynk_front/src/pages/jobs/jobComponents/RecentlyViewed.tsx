@@ -5,7 +5,7 @@ import type { JobWithMatch } from '../types';
 interface RecentlyViewedProps {
   jobs: JobWithMatch[];
   onBookmark: (jobId: string) => void;
-  onView: (jobId: string) => void;
+  onView: (job:JobWithMatch) => void;
   onApply: (jobId: string, applyUrl: string) => void;
 }
 
@@ -26,7 +26,7 @@ export function RecentlyViewed({ jobs, onBookmark, onView, onApply }: RecentlyVi
             key={job.id}
             job={job}
             onBookmark={onBookmark}
-            onView={onView}
+            onView={()=>onView(job)}
             onApply={onApply}
           />
         ))}

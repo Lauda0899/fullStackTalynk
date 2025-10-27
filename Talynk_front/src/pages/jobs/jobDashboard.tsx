@@ -7,6 +7,8 @@ import type { JobWithMatch, JobFilters,JobAlert } from "../jobs/types";
 import { RecentlyViewed } from "./jobComponents/RecentlyViewed";
 import { AlertsPanel } from "./jobComponents/AlertsPanel";
 import { recentlyViewed ,staticJobs,staticAlerts} from "./data";
+import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle } from "@/components/ui/drawer";
+import JobDrawer from "./jobComponents/jobDrawer";
 
 
 export function JobDashboard() {
@@ -47,11 +49,29 @@ export function JobDashboard() {
       ? staticJobs.filter((j) => j.is_bookmarked)
       : staticJobs;
 
+   const [selectedJob, setSelectedJob] = useState<JobWithMatch | null>(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   // --- Handlers
   const handleBookmark = (jobId: string) => console.log("Bookmark toggled:", jobId);
-  const handleView = (jobId: string) => console.log("Viewed:", jobId);
-  const handleApply = (jobId: string, url: string) =>
-    window.open(url, "_blank", "noopener,noreferrer");
+  const handleView = (job: JobWithMatch) => {
+  setSelectedJob(job);
+  setIsDrawerOpen(true);
+};
+
+const handleCloseDrawer = () => {
+    setIsDrawerOpen(false);
+    setSelectedJob(null);
+  };
+
+  const handleApply = (jobId: string, applyUrl?: string) => {
+    if (applyUrl) window.open(applyUrl, '_blank', 'noopener,noreferrer');
+  };
+
+
+
+
+
 
   // --- Example: pick top matches
   const topMatches = staticJobs.filter((job) => job.match_score && job.match_score >= 70);
@@ -143,6 +163,16 @@ export function JobDashboard() {
                 onView={handleView}
                 onApply={handleApply}
              />
+             
+            <JobDrawer
+            isOpen={isDrawerOpen}
+            onClose={handleCloseDrawer}
+            job={selectedJob}
+            onApply={handleApply}
+             />
+
+
+
           </main>
         </div>
       </div>
