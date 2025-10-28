@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Briefcase, Menu, User } from "lucide-react";
+import { Briefcase, Menu, User, LogOut } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from '@/contexts/AuthContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,18 +48,10 @@ const Navbar = () => {
           </div>
 
           {/* Auth Buttons */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link to="/login">
-              <Button variant="ghost" size="default">
-                <User className="w-4 h-4" />
-                Connexion
-              </Button>
-            </Link>
-            <Link to="/register">
-              <Button variant="default" size="default">
-                Créer un compte
-              </Button>
-            </Link>
+          <div className="hidden md:flex items-center gap-4">
+            {/* useAuth provides isAuthenticated, user and logout */}
+            {/** If useAuth is undefined this will throw in runtime; ensure Navbar is used inside AuthProvider */}
+            <AuthArea />
           </div>
 
           {/* Mobile Menu Button */}
@@ -113,3 +106,39 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+function AuthArea() {
+  const { isAuthenticated, user, logout } = useAuth();
+
+  return (
+    <>
+      {isAuthenticated ? (
+        <>
+          <span className="text-gray-700">
+            Bonjour, {user?.first_name || user?.username}
+          </span>
+          <button
+            onClick={logout}
+            className="inline-flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-gray-900 transition-colors"
+          >
+            <LogOut className="w-4 h-4" />
+            Déconnexion
+          </button>
+        </>
+      ) : (
+        <>
+          <Link to="/login">
+            <button className="px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Connexion
+            </button>
+          </Link>
+          <Link to="/register">
+            <button className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all">
+              Inscription
+            </button>
+          </Link>
+        </>
+      )}
+    </>
+  );
+}
