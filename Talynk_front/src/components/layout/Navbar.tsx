@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Briefcase, Menu, User, LogOut } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from '@/contexts/AuthContext';
-
+import logo from '@/assets/talynk_logo.png';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -15,7 +15,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center shadow-md">
             <img 
-              src="/assets/talynk_logo.png" 
+              src={logo} 
  
             />
           </div>
