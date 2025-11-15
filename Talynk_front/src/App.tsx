@@ -13,6 +13,8 @@ import FistPageAfterLogin from './pages/FistPageAfterLogin';
 import CreateNewCV from "./pages/CreateNewCv";
 import InterviewSimulator from "./pages/InterviewSimulator";
 import AIWriting from "./pages/AIWriting";
+import AboutUs from "./pages/AboutUs";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +31,9 @@ const App = () => (
           
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/Contact" element={<Contact />} />
+
           <Route path="/createNewCv" element={<CreateNewCV />} />
           <Route path="/interviewSimulator" element={<InterviewSimulator />} />
           <Route path="/AIwriting" element={<AIWriting />} />
