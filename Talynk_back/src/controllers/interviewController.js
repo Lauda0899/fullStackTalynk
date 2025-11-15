@@ -15,7 +15,7 @@ exports.createSession = async (req, res) => {
 
     res.status(201).json({
       message: 'Session d\'entretien créée',
-      session
+      session 
     });
   } catch (error) {
     res.status(500).json({ 

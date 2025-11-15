@@ -1,6 +1,4 @@
-
-
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // User Schema
@@ -9,74 +7,71 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    maxlength: 80
+    maxlength: 80,
   },
   email: {
     type: String,
     required: true,
     unique: true,
-    maxlength: 120
+    maxlength: 120,
   },
   password_hash: {
     type: String,
     required: true,
-    maxlength: 120
+    maxlength: 120,
   },
   first_name: {
     type: String,
     required: true,
-    maxlength: 50
+    maxlength: 50,
   },
   last_name: {
     type: String,
     required: true,
-    maxlength: 50
+    maxlength: 50,
   },
   created_at: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
-// Indexes
-userSchema.index({ username: 1 });
-userSchema.index({ email: 1 });
-
-const User = mongoose.model('User', userSchema);
+// Note: username and email indexes are created automatically by unique: true
+const User = mongoose.model("User", userSchema);
 
 // CV Schema
 const cvSchema = new Schema({
   user_id: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: "User",
+    required: true,
   },
   title: {
     type: String,
     required: true,
-    maxlength: 100
+    maxlength: 100,
   },
   language: {
     type: String,
-    default: 'en',
-    maxlength: 10
+    default: "en",
+    maxlength: 10,
   },
   content: {
     type: Object,
-    required: true
+    required: true,
   },
   created_at: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   updated_at: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 // Update timestamp on save
-cvSchema.pre('save', function(next) {
+cvSchema.pre("save", function (next) {
   this.updated_at = Date.now();
   next();
 });
@@ -85,60 +80,62 @@ cvSchema.pre('save', function(next) {
 cvSchema.index({ user_id: 1 });
 cvSchema.index({ created_at: -1 });
 
-const CV = mongoose.model('CV', cvSchema);
+const CV = mongoose.model("CV", cvSchema);
 
 // Job Schema
 const jobSchema = new Schema({
   title: {
     type: String,
     required: true,
-    maxlength: 200
+    maxlength: 200,
   },
   company: {
     type: String,
     required: true,
-    maxlength: 200
+    maxlength: 200,
   },
   location: {
     type: String,
     required: true,
-    maxlength: 200
+    maxlength: 200,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
-  requirements:[ {
-    type: String,
-    required: true
-  }],
+  requirements: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
   salary_min: {
-    type: Number
+    type: Number,
   },
   salary_max: {
-    type: Number
+    type: Number,
   },
   job_type: {
     type: String,
     maxlength: 50,
-    enum: ['full-time', 'part-time', 'contract']
+    enum: ["full-time", "part-time", "contract"],
   },
   remote: {
     type: Boolean,
-    default: false
+    default: false,
   },
   source_url: {
     type: String,
-    maxlength: 500
+    maxlength: 500,
   },
   posted_date: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   match_score: {
     type: Number,
-    default: 0.0
-  }
+    default: 0.0,
+  },
 });
 
 // Indexes
@@ -148,38 +145,38 @@ jobSchema.index({ remote: 1 });
 jobSchema.index({ posted_date: -1 });
 jobSchema.index({ match_score: -1 });
 
-const Job = mongoose.model('Job', jobSchema);
+const Job = mongoose.model("Job", jobSchema);
 
 // Job Application Schema
 const jobApplicationSchema = new Schema({
   user_id: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: "User",
+    required: true,
   },
   job_id: {
     type: Schema.Types.ObjectId,
-    ref: 'Job',
-    required: true
+    ref: "Job",
+    required: true,
   },
   cv_id: {
     type: Schema.Types.ObjectId,
-    ref: 'CV',
-    required: true
+    ref: "CV",
+    required: true,
   },
   status: {
     type: String,
-    default: 'applied',
+    default: "applied",
     maxlength: 50,
-    enum: ['applied', 'reviewed', 'interviewed', 'rejected', 'accepted']
+    enum: ["applied", "reviewed", "interviewed", "rejected", "accepted"],
   },
   applied_at: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   notes: {
-    type: String
-  }
+    type: String,
+  },
 });
 
 // Indexes
@@ -188,51 +185,54 @@ jobApplicationSchema.index({ job_id: 1 });
 jobApplicationSchema.index({ status: 1 });
 jobApplicationSchema.index({ applied_at: -1 });
 
-const JobApplication = mongoose.model('JobApplication', jobApplicationSchema);
+const JobApplication = mongoose.model("JobApplication", jobApplicationSchema);
 
 // Interview Session Schema
 const interviewSessionSchema = new Schema({
   user_id: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: "User",
+    required: true,
   },
   job_title: {
     type: String,
     required: true,
-    maxlength: 200
+    maxlength: 200,
   },
   questions: {
     type: [Object],
-    default: []
+    default: [],
   },
   responses: {
     type: [Object],
-    default: []
+    default: [],
   },
   analysis: {
-    type: Object
+    type: Object,
   },
   confidence_score: {
-    type: Number
+    type: Number,
   },
   speech_score: {
-    type: Number
+    type: Number,
   },
   expression_score: {
-    type: Number
+    type: Number,
   },
   created_at: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 // Indexes
 interviewSessionSchema.index({ user_id: 1 });
 interviewSessionSchema.index({ created_at: -1 });
 
-const InterviewSession = mongoose.model('InterviewSession', interviewSessionSchema);
+const InterviewSession = mongoose.model(
+  "InterviewSession",
+  interviewSessionSchema
+);
 
 // Export models
 module.exports = {
@@ -240,5 +240,5 @@ module.exports = {
   CV,
   Job,
   JobApplication,
-  InterviewSession
+  InterviewSession,
 };

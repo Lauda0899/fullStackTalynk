@@ -337,19 +337,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Need Help */}
-            <div className="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <HelpCircle className="w-6 h-6 text-yellow-600" />
-                <h3 className="text-lg font-bold text-gray-800">Need Immediate Help?</h3>
-              </div>
-              <p className="text-gray-600 text-sm mb-4">
-                Check out our Help Center for instant answers to common questions.
-              </p>
-              <button className="w-full bg-yellow-400 text-gray-800 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition-all">
-                Visit Help Center
-              </button>
-            </div>
+
           </div>
         </div>
 
@@ -408,16 +396,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Map Section */}
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          <div className="aspect-video bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Find Us on Map</h3>
-              <p className="text-gray-600">Interactive map integration coming soon</p>
-            </div>
-          </div>
-        </div>
+      
       </div>
     </div>
   );

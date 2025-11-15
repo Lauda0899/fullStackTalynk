@@ -15,6 +15,8 @@ import InterviewSimulator from "./pages/InterviewSimulator";
 import AIWriting from "./pages/AIWriting";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
+import { JobDashboard } from "./pages/jobs/jobDashboard";
+
 
 const queryClient = new QueryClient();
 
@@ -33,9 +35,12 @@ const App = () => (
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/job-dashboard" element={<JobDashboard />} />
+
+          
 
           <Route path="/createNewCv" element={<CreateNewCV />} />
-          <Route path="/interviewSimulator" element={<InterviewSimulator />} />
+          <Route path="/InterviewSimilator" element={<InterviewSimulator />} />
           <Route path="/AIwriting" element={<AIWriting />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

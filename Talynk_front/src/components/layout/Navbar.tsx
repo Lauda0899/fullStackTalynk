@@ -27,17 +27,12 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
+            
             <Link 
-              to="/jobs" 
+              to="/aboutUs" 
               className="text-muted-foreground hover:text-foreground transition-colors font-medium"
             >
-              Offres d'emploi
-            </Link>
-            <Link 
-              to="/about" 
-              className="text-muted-foreground hover:text-foreground transition-colors font-medium"
-            >
-              À propos
+              About Us
             </Link>
             <Link 
               to="/contact" 
@@ -88,12 +83,12 @@ const Navbar = () => {
               <div className="flex flex-col gap-2 px-4 pt-2">
                 <Link to="/login" className="w-full">
                   <Button variant="ghost" size="default" className="w-full">
-                    Connexion
+                    Sign-in
                   </Button>
                 </Link>
                 <Link to="/register" className="w-full">
                   <Button variant="default" size="default" className="w-full">
-                    Créer un compte
+                    Sign-up
                   </Button>
                 </Link>
               </div>
@@ -115,26 +110,26 @@ function AuthArea() {
       {isAuthenticated ? (
         <>
           <span className="text-gray-700">
-            Bonjour, {user?.first_name || user?.username}
+            Good morning, {user?.first_name || user?.username}
           </span>
           <button
             onClick={logout}
             className="inline-flex items-center gap-2 px-4 py-2 text-gray-700 hover:text-gray-900 transition-colors"
           >
             <LogOut className="w-4 h-4" />
-            Déconnexion
+            Logout
           </button>
         </>
       ) : (
         <>
           <Link to="/login">
             <button className="px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-colors">
-              Connexion
+              Sign-in
             </button>
           </Link>
           <Link to="/register">
             <button className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all">
-              Inscription
+              Sign-up
             </button>
           </Link>
         </>
