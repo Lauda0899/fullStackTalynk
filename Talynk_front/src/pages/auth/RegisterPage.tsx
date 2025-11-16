@@ -62,15 +62,15 @@ const RegisterPage = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]" />
         <div className="relative z-10 text-white space-y-6 max-w-lg text-center">
           <h2 className="text-4xl font-bold">
-            Démarrez votre carrière
+            Start your career
           </h2>
           <p className="text-lg text-white/80">
-            Créez votre profil en quelques minutes et accédez à des milliers d'opportunités
+            Create your profile in just a few minutes and access thousands of opportunities
           </p>
           <div className="grid grid-cols-2 gap-4 pt-8">
             <div className="p-4 bg-white/10 backdrop-blur-sm rounded-lg">
               <div className="text-2xl font-bold">100%</div>
-              <div className="text-white/60 text-sm">Gratuit</div>
+              <div className="text-white/60 text-sm">Free</div>
             </div>
             <div className="p-4 bg-white/10 backdrop-blur-sm rounded-lg">
               <div className="text-2xl font-bold">2 min</div>
@@ -88,12 +88,12 @@ const RegisterPage = () => {
                 <Briefcase className="w-7 h-7 text-white" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
-                TalentHub
+                Talynk
               </span>
             </Link>
-            <h1 className="text-3xl font-bold mt-6">Créer un compte</h1>
+            <h1 className="text-3xl font-bold mt-6">Create your account</h1>
             <p className="text-gray-600 mt-2">
-              Rejoignez la communauté TalentHub
+              Join Talynk community
             </p>
           </div>
 
@@ -108,7 +108,7 @@ const RegisterPage = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
-                    Prénom
+                    first_name
                   </label>
                   <input
                     id="firstName"
@@ -122,7 +122,7 @@ const RegisterPage = () => {
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
-                    Nom
+                    last_name
                   </label>
                   <input
                     id="lastName"
@@ -138,7 +138,7 @@ const RegisterPage = () => {
 
               <div className="space-y-2">
                 <label htmlFor="username" className="block text-sm font-medium text-gray-700">
-                  Nom d'utilisateur
+                  username
                 </label>
                 <input
                   id="username"
@@ -168,7 +168,7 @@ const RegisterPage = () => {
 
               <div className="space-y-2">
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                  Mot de passe
+                  Password
                 </label>
                 <input
                   id="password"
@@ -180,13 +180,13 @@ const RegisterPage = () => {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
                 <p className="text-xs text-gray-500">
-                  Minimum 8 caractères, incluant une majuscule et un chiffre
+                  Minimum 8 characters, including an uppercase letter and a number
                 </p>
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
-                  Confirmer le mot de passe
+                  Confirm Password
                 </label>
                 <input
                   id="confirmPassword"
@@ -208,13 +208,13 @@ const RegisterPage = () => {
                 required
               />
               <label htmlFor="terms" className="text-sm text-gray-600">
-                J'accepte les{' '}
+                I accept the {' '}
                 <Link to="/terms" className="text-blue-600 hover:underline">
-                  conditions d'utilisation
+                  terms of use 
                 </Link>{' '}
-                et la{' '}
+                and {' '}
                 <Link to="/privacy" className="text-blue-600 hover:underline">
-                  politique de confidentialité
+                  the privacy policy
                 </Link>
               </label>
             </div>
@@ -224,7 +224,7 @@ const RegisterPage = () => {
               disabled={isLoading}
               className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
             >
-              {isLoading ? 'Création...' : 'Créer mon compte'}
+              {isLoading ? 'Création...' : 'Create your account'}
             </button>
           </form>
 
@@ -234,7 +234,7 @@ const RegisterPage = () => {
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="px-4 bg-white text-gray-500">
-                Déjà un compte ?
+                you already have an accound ?
               </span>
             </div>
           </div>
@@ -242,7 +242,7 @@ const RegisterPage = () => {
           <div className="text-center">
             <Link to="/login">
               <button className="w-full py-3 px-4 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all">
-                Se connecter
+                Connect
               </button>
             </Link>
           </div>

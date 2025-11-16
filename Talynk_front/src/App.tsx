@@ -16,6 +16,7 @@ import AIWriting from "./pages/AIWriting";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import { JobDashboard } from "./pages/jobs/jobDashboard";
+import { VrOffic } from "./pages/vr/VrOffic";
 
 
 const queryClient = new QueryClient();
@@ -30,14 +31,14 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/ProtecteRouting" element={<FistPageAfterLogin />} />
-          
+
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/job-dashboard" element={<JobDashboard />} />
+          <Route path="/vrOfficeJob" element={<VrOffic />} />
 
-          
 
           <Route path="/createNewCv" element={<CreateNewCV />} />
           <Route path="/InterviewSimilator" element={<InterviewSimulator />} />
