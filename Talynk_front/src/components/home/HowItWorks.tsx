@@ -3,26 +3,26 @@ import { UserPlus, FileText, Search, Sparkles } from "lucide-react";
 const steps = [
   {
     icon: UserPlus,
-    title: "Créez votre profil",
-    description: "Inscrivez-vous gratuitement et créez votre profil professionnel en quelques minutes",
+    title: "Create your profil",
+    description: "Sign up for free and create your professional profile in minutes",
     color: "from-blue-500 to-cyan-500"
   },
   {
     icon: FileText,
-    title: "Créez votre CV",
-    description: "Utilisez notre éditeur intuitif pour créer un CV professionnel qui se démarque",
+    title: "Create your CV",
+    description: "Use our intuitive editor to create a professional CV that stands out",
     color: "from-purple-500 to-pink-500"
   },
   {
     icon: Search,
-    title: "Recherchez des offres",
-    description: "Explorez des milliers d'opportunités et trouvez celle qui correspond à vos aspirations",
+    title: "Search for offers",
+    description: "Explore thousands of opportunities and find the one that matches your aspirations.",
     color: "from-amber-500 to-orange-500"
   },
   {
     icon: Sparkles,
-    title: "Postulez facilement",
-    description: "Postulez en un clic et suivez l'évolution de vos candidatures en temps réel",
+    title: "Apply easily",
+    description: "Apply in one click and track the progress of your applications in real time",
     color: "from-green-500 to-emerald-500"
   }
 ];
@@ -34,10 +34,10 @@ const HowItWorks = () => {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Comment ça marche ?
+            How does it work?
           </h2>
           <p className="text-muted-foreground text-lg">
-            Quatre étapes simples pour trouver votre prochain job
+            Four simple steps to finding your next job
           </p>
         </div>
 

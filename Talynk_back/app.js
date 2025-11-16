@@ -15,7 +15,7 @@ app.use(helmet());
 
 // CORS
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:8080'||'*/*',
+  origin: process.env.FRONTEND_URL || 'http://localhost:8080'||'*/*'||'http://localhost:8081',
   credentials: true
 }));
 

@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 const mockJobs = [
   {
     id: 1,
-    title: "Développeur Full Stack",
+    title: "Full Stack Developer",
     company: "TechCorp",
-    location: "Paris, France",
+    location: "Muscat , Oman",
     type: "CDI",
     salary: "45K - 65K €",
     tags: ["React", "Node.js", "TypeScript"],
     logo: "💻",
-    postedAt: "Il y a 2 jours"
+    postedAt: "2 Days ago"
   },
   {
     id: 2,
@@ -24,29 +24,29 @@ const mockJobs = [
     salary: "50K - 70K €",
     tags: ["Figma", "Design System", "Mobile"],
     logo: "🎨",
-    postedAt: "Il y a 3 jours"
+    postedAt: "3 Days ago"
   },
   {
     id: 3,
-    title: "Chef de Projet Digital",
+    title: "Digital Project Manager",
     company: "Marketing Pro",
-    location: "Lyon, France",
+    location: "Sousse , Tunisia",
     type: "CDI",
     salary: "40K - 55K €",
     tags: ["Agile", "Marketing", "Analytics"],
     logo: "📊",
-    postedAt: "Il y a 1 semaine"
+    postedAt: "1 Week ago"
   },
   {
     id: 4,
     title: "Data Scientist",
     company: "AI Solutions",
-    location: "Paris, France",
+    location: "Luanda, Angola",
     type: "CDI",
     salary: "55K - 75K €",
     tags: ["Python", "ML", "TensorFlow"],
     logo: "🤖",
-    postedAt: "Il y a 4 jours"
+    postedAt: "4 Days ago"
   },
   {
     id: 5,
@@ -57,18 +57,18 @@ const mockJobs = [
     salary: "50K - 70K €",
     tags: ["AWS", "Docker", "Kubernetes"],
     logo: "☁️",
-    postedAt: "Il y a 5 jours"
+    postedAt: "5 Days ago"
   },
   {
     id: 6,
     title: "Product Manager",
     company: "StartupHub",
-    location: "Bordeaux, France",
+    location: "Riadh, Saudi Arabia",
     type: "CDI",
     salary: "45K - 65K €",
     tags: ["Product", "Strategy", "Growth"],
     logo: "🚀",
-    postedAt: "Il y a 1 semaine"
+    postedAt: "1 Week ago"
   }
 ];
 
@@ -79,10 +79,10 @@ const FeaturedJobs = () => {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Offres en vedette
+            Featured Offers
           </h2>
           <p className="text-muted-foreground text-lg">
-            Découvrez les meilleures opportunités du moment, sélectionnées pour vous
+            Discover the best opportunities of the moment, selected for you.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ const FeaturedJobs = () => {
 
                 {/* Action */}
                 <div className="flex items-center gap-2 text-primary text-sm font-medium pt-2">
-                  Voir l'offre
+                  See the offer
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -155,7 +155,7 @@ const FeaturedJobs = () => {
           <Link to="/jobs">
             <Button variant="outline" size="lg" className="gap-2">
               <Briefcase className="w-5 h-5" />
-              Voir toutes les offres
+              See all offers
               <ArrowRight className="w-5 h-5" />
             </Button>
           </Link>

@@ -37,12 +37,12 @@ const LoginPage = () => {
                 <Briefcase className="w-7 h-7 text-white" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
-                TalentHub
+                Talynk
               </span>
             </Link>
-            <h1 className="text-3xl font-bold mt-6">Bon retour !</h1>
+            <h1 className="text-3xl font-bold mt-6">Welcome Back !</h1>
             <p className="text-gray-600 mt-2">
-              Connectez-vous pour accéder à votre compte
+              Log in to access your account
             </p>
           </div>
 
@@ -61,7 +61,7 @@ const LoginPage = () => {
                 <input
                   id="email"
                   type="email"
-                  placeholder="votre@email.com"
+                  placeholder="your@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -72,13 +72,13 @@ const LoginPage = () => {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                    Mot de passe
+                    Password
                   </label>
                   <Link
                     to="/forgot-password"
                     className="text-sm text-blue-600 hover:underline"
                   >
-                    Mot de passe oublié ?
+                    Forget Password ?
                   </Link>
                 </div>
                 <input
@@ -108,7 +108,7 @@ const LoginPage = () => {
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="px-4 bg-white text-gray-500">
-                Nouveau sur TalentHub ?
+                New to Talynk ?
               </span>
             </div>
           </div>
@@ -116,7 +116,7 @@ const LoginPage = () => {
           <div className="text-center">
             <Link to="/register">
               <button className="w-full py-3 px-4 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all">
-                Créer un compte
+                Create an account
               </button>
             </Link>
           </div>
@@ -127,19 +127,19 @@ const LoginPage = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]" />
         <div className="relative z-10 text-white space-y-6 max-w-lg text-center">
           <h2 className="text-4xl font-bold">
-            Trouvez votre prochain défi
+            Find your next challenge
           </h2>
           <p className="text-lg text-white/80">
-            Rejoignez des milliers de professionnels qui ont trouvé leur job idéal sur TalentHub
+            Join thousands of professionals who have found their ideal job on Talynk
           </p>
           <div className="flex justify-center gap-8 pt-8">
             <div className="text-center">
               <div className="text-3xl font-bold">10K+</div>
-              <div className="text-white/60 text-sm">Offres</div>
+              <div className="text-white/60 text-sm">Offers</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold">5K+</div>
-              <div className="text-white/60 text-sm">Entreprises</div>
+              <div className="text-white/60 text-sm">Companies</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold">50K+</div>

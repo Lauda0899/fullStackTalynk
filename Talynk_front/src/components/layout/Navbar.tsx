@@ -66,13 +66,13 @@ const Navbar = () => {
                 to="/jobs" 
                 className="px-4 py-2 hover:bg-accent rounded-lg transition-colors"
               >
-                Offres d'emploi
+                Job offers
               </Link>
               <Link 
                 to="/about" 
                 className="px-4 py-2 hover:bg-accent rounded-lg transition-colors"
               >
-                À propos
+                About
               </Link>
               <Link 
                 to="/contact" 

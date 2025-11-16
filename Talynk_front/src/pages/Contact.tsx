@@ -23,13 +23,13 @@ export default function Contact() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Call Us',
-      details: ['+1 (555) 123-4567', '+1 (555) 987-6543'],
+      details: ['+216 02 110 574', '+216 02 307 405'],
       color: 'green'
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: 'Visit Us',
-      details: ['123 Career Street', 'New York, NY 10001, USA'],
+      details: ['123 Career Street', 'Sousse, SY 10001, Tunisia'],
       color: 'red'
     },
     {
@@ -69,22 +69,22 @@ export default function Contact() {
 
   const offices = [
     {
-      city: 'New York',
-      address: '123 Career Street, NY 10001',
-      phone: '+1 (555) 123-4567',
-      email: 'ny@jobsearch.com'
+      city: 'Sousse',
+      address: '123 Career Street, SY 10001',
+      phone: '+216 06 123 456',
+      email: 'sy@jobsearch.com'
     },
     {
-      city: 'San Francisco',
+      city: 'Sfax',
       address: '456 Tech Avenue, SF 94102',
-      phone: '+1 (555) 234-5678',
+      phone: '+216 03 220 650',
       email: 'sf@jobsearch.com'
     },
     {
-      city: 'London',
-      address: '789 Business Road, London EC1A',
-      phone: '+44 20 1234 5678',
-      email: 'london@jobsearch.com'
+      city: 'Tunis',
+      address: '235 Business Road, TN EC1A',
+      phone: '+216 02 124 678',
+      email: 'tn@jobsearch.com'
     }
   ];
 
@@ -187,7 +187,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="John Doe"
+                      placeholder="Jeff Dop"
                     />
                   </div>
 
@@ -201,7 +201,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="john@example.com"
+                      placeholder="jeff@example.com"
                     />
                   </div>
                 </div>
@@ -217,7 +217,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="+216 02 123 567"
                     />
                   </div>
 

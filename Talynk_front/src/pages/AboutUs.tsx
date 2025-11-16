@@ -278,7 +278,7 @@ export default function About() {
                 <Phone className="w-8 h-8" />
               </div>
               <h3 className="font-semibold mb-2">Call Us</h3>
-              <p className="text-blue-100">+1 (555) 123-4567</p>
+              <p className="text-blue-100">+216 02 110 574</p>
             </div>
 
             <div className="text-center">
@@ -286,7 +286,7 @@ export default function About() {
                 <MapPin className="w-8 h-8" />
               </div>
               <h3 className="font-semibold mb-2">Visit Us</h3>
-              <p className="text-blue-100">123 Career Street, NY 10001</p>
+              <p className="text-blue-100">123 Career Street, SY 10001</p>
             </div>
           </div>
         </div>

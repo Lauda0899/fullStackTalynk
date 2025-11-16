@@ -16,21 +16,21 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
             <TrendingUp className="w-4 h-4" />
-            Plus de 10,000 offres d'emploi disponibles
+            More than 10,000 job offers available
           </div>
 
           {/* Title */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
-            Trouvez le job de{" "}
+            Find the job of {" "}
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
-              vos rêves
+              your dreams
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-            La plateforme qui connecte les talents avec les meilleures opportunités. 
-            Recherchez, postulez et démarrez votre nouvelle carrière aujourd'hui.
+            The platform that connects talent with the best opportunities.
+            Search, apply, and launch your new career today.
           </p>
 
           {/* Search Bar */}
@@ -38,12 +38,12 @@ const HeroSection = () => {
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
               <Input 
-                placeholder="Poste, entreprise, mots-clés..." 
+                placeholder="Position, company, keywords..." 
                 className="pl-10 border-0 focus-visible:ring-0 h-12"
               />
             </div>
             <Button variant="hero" size="lg" className="sm:w-auto w-full">
-              Rechercher
+              Search
             </Button>
           </div>
 
@@ -52,13 +52,13 @@ const HeroSection = () => {
             <Link to="/jobs">
               <Button variant="gradient" size="lg" className="gap-2">
                 <Briefcase className="w-5 h-5" />
-                Explorer les offres
+                Explore offers
               </Button>
             </Link>
             <Link to="/register">
               <Button variant="outline" size="lg" className="gap-2">
                 <Users className="w-5 h-5" />
-                Créer un compte
+                Create an account
               </Button>
             </Link>
           </div>
@@ -69,19 +69,19 @@ const HeroSection = () => {
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
                 10K+
               </div>
-              <div className="text-sm text-muted-foreground">Offres actives</div>
+              <div className="text-sm text-muted-foreground">Active offers</div>
             </div>
             <div className="space-y-1">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
                 5K+
               </div>
-              <div className="text-sm text-muted-foreground">Entreprises</div>
+              <div className="text-sm text-muted-foreground">Companies</div>
             </div>
             <div className="col-span-2 md:col-span-1 space-y-1">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
                 50K+
               </div>
-              <div className="text-sm text-muted-foreground">Candidats actifs</div>
+              <div className="text-sm text-muted-foreground">Active candidates</div>
             </div>
           </div>
         </div>
