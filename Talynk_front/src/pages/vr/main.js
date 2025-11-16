@@ -2,7 +2,6 @@ import { dialogueData, scaleFactor } from "./constants";
 import { k } from "./kaboomCtx";
 import { displayDialogue, setCamScale } from "./utils";
 
-// --- Load sprites ---
 k.loadSprite("spritesheet", "./spritesheet.png", {
   sliceX: 39,
   sliceY: 31,
@@ -18,7 +17,7 @@ k.loadSprite("spritesheet", "./spritesheet.png", {
 k.loadSprite("map", "./map.png");
 k.setBackground(k.Color.fromHex("#311047"));
 
-// --- Global CSS for panels ---
+
 const style = document.createElement('style');
 style.innerHTML = `
   .panel {
@@ -58,10 +57,8 @@ k.scene("main", async () => {
   const mapData = await (await fetch("./map.json")).json();
   const layers = mapData.layers;
 
-  // --- MAP ---
   const map = k.add([k.sprite("map"), k.pos(0,0), k.scale(scaleFactor), k.z(0)]);
 
-  // --- PLAYER ---
   const player = k.add([
     k.sprite("spritesheet", { anim: "idle-down" }),
     k.area({ shape: new k.Rect(k.vec2(0,3),15,15) }),
@@ -73,14 +70,12 @@ k.scene("main", async () => {
     "player",
   ]);
 
-  // --- SPAWN POINT ---
   const spawnLayer = layers.find(l => l.name==="spawnpoint");
   if(spawnLayer){
     const spawnObj = spawnLayer.objects.find(o=>o.name==="player");
     if(spawnObj) player.pos = k.vec2(spawnObj.x*scaleFactor, spawnObj.y*scaleFactor);
   }
 
-  // --- BOUNDARIES ---
   const boundaryLayer = layers.find(l => l.name==="boundaries");
   if(boundaryLayer){
     for(const obj of boundaryLayer.objects){
@@ -93,7 +88,7 @@ k.scene("main", async () => {
     }
   }
 
-  // --- MOVEMENT ---
+  
   k.onKeyDown(()=>{
     if(player.isInDialogue) return;
     let moveX=0, moveY=0;
@@ -110,7 +105,6 @@ k.scene("main", async () => {
   });
   player.onCollide("wall",()=>player.stop());
 
-  // --- ZONES ---
   const zonesLayer = layers.find(l=>l.name==="stands" || l.name==="zones");
   const zones=[];
   if(zonesLayer){
@@ -131,7 +125,7 @@ k.scene("main", async () => {
     }
   }
 
-  // --- PANEL MANAGEMENT ---
+ 
   let activeZone=null;
   let activePanel=null;
 
@@ -157,7 +151,6 @@ k.scene("main", async () => {
     }
   });
 
-  // --- AUTO CLOSE PANEL + CAMERA ---
   k.onUpdate(()=>{
     player.pos.x=k.clamp(player.pos.x,0,map.width*scaleFactor-16);
     player.pos.y=k.clamp(player.pos.y,0,map.height*scaleFactor-16);
@@ -178,7 +171,7 @@ k.scene("main", async () => {
   setCamScale(k);
   k.onResize(()=>setCamScale(k));
 
-  // --- PANEL FUNCTIONS ---
+
   function showChatPanel(zone){
     const old=document.getElementById("chatPanel"); if(old) old.remove();
     const panel=document.createElement("div"); panel.id="chatPanel"; panel.className="panel"; activePanel=panel;
@@ -217,8 +210,10 @@ k.scene("main", async () => {
       <button id="botSendBtn">Envoyer</button><br><br>
       <button id="botCloseBtn">Fermer</button>
     `;
+
     document.body.appendChild(panel);
 
+    
     document.getElementById("botCloseBtn").onclick=()=>{panel.remove(); activePanel=null; activeZone=null;};
     document.getElementById("botSendBtn").onclick=()=>{
       const input=document.getElementById("botInput");
@@ -236,6 +231,8 @@ k.scene("main", async () => {
       content.scrollTop=content.scrollHeight;
     };
   }
+
+
 
   function showCompanyPanel(zone){
     const old=document.getElementById("companyPanel"); if(old) old.remove();

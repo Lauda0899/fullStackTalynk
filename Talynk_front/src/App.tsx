@@ -17,7 +17,7 @@ import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import { JobDashboard } from "./pages/jobs/jobDashboard";
 import { VrOffic } from "./pages/vr/VrOffic";
-
+import CompanyInterface from "./pages/company/CompanyInterface";
 
 const queryClient = new QueryClient();
 
@@ -36,9 +36,10 @@ const App = () => (
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/CompanyInterface" element={<CompanyInterface />} />
           <Route path="/job-dashboard" element={<JobDashboard />} />
           <Route path="/vrOfficeJob" element={<VrOffic />} />
-
+          
 
           <Route path="/createNewCv" element={<CreateNewCV />} />
           <Route path="/InterviewSimilator" element={<InterviewSimulator />} />
